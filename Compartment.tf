@@ -7,3 +7,24 @@ resource "oci_identity_compartment" "Flip_Compartment" {
     "FLIPKART-TAGS.Environment" = "Prod"
     }
   }
+
+
+resource "oci_identity_compartment" "Flip_Network_Compartment" {
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaagsgye2ft6ssyas7uvsq7ohgehqbo7lstsgvy27chjqpbkuaatl2q"
+  name           = "Flip_Network_Comp"
+  description    = "Compartment for Flip Network Resources"
+  
+  defined_tags = {
+    "FLIPKART-TAGS.Environment" = "Prod"
+    }
+  }
+
+resource "oci_identity_compartment" "Flip_computeandstorage_Compartment" {
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaagsgye2ft6ssyas7uvsq7ohgehqbo7lstsgvy27chjqpbkuaatl2q"
+  name           = "Flip_computeandstorage_Comp"
+  description    = "Compartment for Flip Compute and Storage Resources"
+  
+  defined_tags = {
+    "FLIPKART-TAGS.Environment" = "Prod"
+    }
+  }
