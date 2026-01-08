@@ -15,3 +15,4 @@ resource "oci_core_nat_gateway" "nat_gw" {
   vcn_id         = "ocid1.vcn.oc1.ap-mumbai-1.amaaaaaagyisp6ia2eqnnpucq35xuvsvd5grch2u5zab7ojztjlz3g5lgoaa"
   display_name = "flip_nat_gw"
 }
+  
