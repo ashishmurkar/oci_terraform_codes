@@ -5,7 +5,7 @@ resource "oci_core_subnet" "flip_pub_subnet" {
   display_name   = "flip_public_subnet"
   cidr_block     = "10.0.2.0/29"
 
-  route_table_id = "ocid1.routetable.oc1.ap-mumbai-1.aaaaaaaajjboduky4s5eswklkoinaaq6txvznznudupmfz7rv3rwcq5qghvq"
+  route_table_id = oci_core_route_table.public_rt.id
   security_list_ids = [
     oci_core_security_list.public_sl.id
   ]
