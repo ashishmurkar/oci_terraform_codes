@@ -9,6 +9,13 @@ resource "oci_core_route_table" "app_rt" {
     network_entity_id = oci_core_internet_gateway.app_internet_gateway.id
     description       = "Route internet-bound traffic to IG"
   }
+  
+  route_rules {
+  destination       = "10.0.0.0/24"
+  destination_type  = "CIDR_BLOCK"
+  network_entity_id = oci_core_drg.hub_to_spoke_drg.id
+  description       = "Return traffic from spoke app_sub to hub_pub_subnet via DRG"
+}
 
   defined_tags = {
     "FLIPKART-TAGS.Environment" = "Prod"
@@ -36,5 +43,7 @@ route_rules {
   network_entity_id = oci_core_drg.hub_to_spoke_drg.id
   description       = "allowing traffic from hub_pub_subnet to spoke app_sub via DRG"
 }
-
+defined_tags = {
+    "FLIPKART-TAGS.Environment" = "Prod"
+  }
 }
